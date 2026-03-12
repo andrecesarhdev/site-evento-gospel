@@ -1,4 +1,10 @@
+import Card from "../ui/Card"
+
+import { events } from "../../data/events"
 export default function FeaturedEvents() {
+
+
+
   return (
     <section className="py-24">
 
@@ -10,47 +16,14 @@ export default function FeaturedEvents() {
 
         <div className="grid gap-8 md:grid-cols-3">
 
-          <div className="border border-neutral-800 rounded-lg overflow-hidden">
-            <div className="h-48 bg-neutral-800"></div>
-
-            <div className="p-6">
-              <h3 className="font-semibold">
-                Noite de Louvor
-              </h3>
-
-              <p className="text-sm text-neutral-400 mt-2">
-                São Paulo - 2024
-              </p>
-            </div>
-          </div>
-
-          <div className="border border-neutral-800 rounded-lg overflow-hidden">
-            <div className="h-48 bg-neutral-800"></div>
-
-            <div className="p-6">
-              <h3 className="font-semibold">
-                Festival Gospel
-              </h3>
-
-              <p className="text-sm text-neutral-400 mt-2">
-                Rio de Janeiro
-              </p>
-            </div>
-          </div>
-
-          <div className="border border-neutral-800 rounded-lg overflow-hidden">
-            <div className="h-48 bg-neutral-800"></div>
-
-            <div className="p-6">
-              <h3 className="font-semibold">
-                Sessão de Filme Cristão
-              </h3>
-
-              <p className="text-sm text-neutral-400 mt-2">
-                Curitiba
-              </p>
-            </div>
-          </div>
+          {events.map((evento, index) => (
+            <Card
+              key={index}
+              title={evento.title}
+              subtitle={evento.subtitle}
+              image={evento.image}
+            />
+          ))}
 
         </div>
 
