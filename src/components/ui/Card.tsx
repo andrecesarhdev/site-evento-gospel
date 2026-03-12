@@ -6,9 +6,10 @@ type CardProps = {
 
 export default function Card({ title, subtitle, image }: CardProps) {
   return (
-    <div className="border border-neutral-800 rounded-lg overflow-hidden hover:border-neutral-600 hover:-translate-y-1 transition duration-300">
+    <div className="border border-neutral-800 rounded-lg overflow-hidden hover:-translate-y-1 transition duration-300">
 
-      <div className="h-48 bg-neutral-800">
+      <div className="h-48 overflow-hidden">
+
         {image && (
           <img
             src={image}
@@ -16,6 +17,7 @@ export default function Card({ title, subtitle, image }: CardProps) {
             className="w-full h-full object-cover"
           />
         )}
+
       </div>
 
       <div className="p-5">
